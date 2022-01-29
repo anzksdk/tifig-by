@@ -1,5 +1,6 @@
 # tifig
 
+by: build for RaspberryPi `sudo docker buildx build --platform linux/arm/v7 --load  -t tifig:armv7 .`
 Converts HEIF images created on iOS 11 devices as fast as ~~humanly~~ possible.
 
 *NOTE*: While we do not have the time to actively maintain tifig anymore, it is functional at a very alpha state. We are open to new maintainers taking the lead. 
