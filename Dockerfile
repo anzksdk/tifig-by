@@ -1,10 +1,10 @@
-FROM alpine as builder
+FROM alpine:3.15 as builder
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN apk --no-cache add \
-    vips-dev@edge \
+    vips-dev \
     ffmpeg-dev \
     fftw-dev \
     g++ \
@@ -21,14 +21,14 @@ RUN \
 
 
 
-FROM alpine
+FROM alpine:3.15
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN apk --no-cache add \
     dumb-init \
-    vips@edge \
+    vips \
     ffmpeg
 
 WORKDIR /tifig
